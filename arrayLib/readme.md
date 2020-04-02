@@ -1,6 +1,6 @@
 ## A functional library for working with arrays.
 
-Functionality (arrayLib):
+### Functionality (arrayLib):
 
 - take(arr,n) - lodash;
 - skip(arr, n) - lodash;
@@ -10,7 +10,7 @@ Functionality (arrayLib):
 - foreach(arr, cb) - lodash.
 
 
-Functionality (arrayLib2):
+### Functionality (arrayLib2):
 
 - sort(bubble, insertion);
 - min(arr);
