@@ -20,3 +20,6 @@ Functionality (arrayLib2):
 
 
 Tested with Jest. 
+
+
+Added es6 version.
