@@ -93,6 +93,10 @@ describe('testing skip function: ', () => {
   test('skip(false, {}) should return []: ', () => {
     expect(arrayLib.skip({})).toStrictEqual([])
   })
+
+  test('skip(false, {}) should return []: ', () => {
+    expect(arrayLib.skip(false, {})).toStrictEqual([])
+  })
 })
 
 describe('testing map function: ', () => {
