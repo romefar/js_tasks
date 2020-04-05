@@ -13,8 +13,8 @@ describe('testing take function: ', () => {
     expect(arrayLib.take([1, 2, 3, 4, 5])).toStrictEqual([1])
   })
 
-  test('take([1,2,3,4,5], 0) should return [1,2,3,4,5]: ', () => {
-    expect(arrayLib.take([1, 2, 3, 4, 5], 0)).toStrictEqual([1])
+  test('take([1,2,3,4,5], 0) should return []: ', () => {
+    expect(arrayLib.take([1, 2, 3, 4, 5], 0)).toStrictEqual([])
   })
 
   test('take([1,2], 5) should return [1,2]: ', () => {
@@ -32,6 +32,21 @@ describe('testing take function: ', () => {
   test('take([], 5) should return []: ', () => {
     expect(arrayLib.take([], 5)).toStrictEqual([])
   })
+
+  test('take(null, 5) should return []: ', () => {
+    expect(arrayLib.take(null, 5)).toStrictEqual([])
+  })
+  test('take(null) should return []: ', () => {
+    expect(arrayLib.take(null)).toStrictEqual([])
+  })
+
+  test('take("") should return []: ', () => {
+    expect(arrayLib.take('')).toStrictEqual([])
+  })
+
+  test('take([1,2,3,4], -1) should return []: ', () => {
+    expect(arrayLib.take([1, 2, 3, 4], -1)).toStrictEqual([])
+  })
 })
 
 describe('testing skip function: ', () => {
@@ -47,8 +62,8 @@ describe('testing skip function: ', () => {
     expect(arrayLib.skip([1, 2, 3, 4, 5])).toStrictEqual([2, 3, 4, 5])
   })
 
-  test('skip([1,2,3,4,5], 0) should return [1,2,3,4,5]: ', () => {
-    expect(arrayLib.skip([1, 2, 3, 4, 5], 0)).toStrictEqual([2, 3, 4, 5])
+  test('skip([1,2,3,4,5], 0) should return []: ', () => {
+    expect(arrayLib.skip([1, 2, 3, 4, 5], 0)).toStrictEqual([])
   })
 
   test('skip([1,2], 5) should return [1,2]: ', () => {
@@ -65,6 +80,18 @@ describe('testing skip function: ', () => {
 
   test('skip([], 5) should return []: ', () => {
     expect(arrayLib.skip([], 5)).toStrictEqual([])
+  })
+
+  test('skip({}) should return []: ', () => {
+    expect(arrayLib.skip({})).toStrictEqual([])
+  })
+
+  test('skip(null) should return []: ', () => {
+    expect(arrayLib.skip(null)).toStrictEqual([])
+  })
+
+  test('skip(false, {}) should return []: ', () => {
+    expect(arrayLib.skip({})).toStrictEqual([])
   })
 })
 
@@ -88,6 +115,10 @@ describe('testing map function: ', () => {
   test('should return [0,0,0]: ', () => {
     expect(arrayLib.map([1, 2, 3], () => 0)).toStrictEqual([0, 0, 0])
   })
+
+  test('should return [1,2,3]: ', () => {
+    expect(arrayLib.map([1, 2, 3], {})).toStrictEqual([1, 2, 3])
+  })
 })
 
 describe('testing filter function: ', () => {
@@ -109,6 +140,14 @@ describe('testing filter function: ', () => {
 
   test('should return ["1"]: ', () => {
     expect(arrayLib.filter([-1 + 1, false, 0, NaN, undefined, '1', null], (item) => !!item)).toStrictEqual(['1'])
+  })
+
+  test('should return []: ', () => {
+    expect(arrayLib.filter([1, 2, 3, 4], {})).toStrictEqual([1, 2, 3, 4])
+  })
+
+  test('should return []: ', () => {
+    expect(arrayLib.filter(null, (a) => a)).toStrictEqual([])
   })
 })
 
@@ -137,8 +176,12 @@ describe('testing forEach function: ', () => {
     expect(arr).toStrictEqual([1, 2, 3, 4, 5])
   })
 
+  test('should return [1, 2]: ', () => {
+    expect(arrayLib.foreach([1, 2], (item) => item * 2)).toStrictEqual([1, 2])
+  })
+
   test('should return undefined: ', () => {
-    expect(arrayLib.foreach([1, 2], (item) => item * 2)).toStrictEqual(undefined)
+    expect(arrayLib.foreach('', (item) => item * 2)).toStrictEqual(undefined)
   })
 
   test('arr2 must be equal to [9,25,49]: ', () => {

@@ -12,20 +12,36 @@ describe('testing sortings functions: ', () => {
     expect(arrayLib2.sort([...arr], 'bubble')).toStrictEqual(sorted)
   })
 
-  test(`sort([${arr.join(',')}], "asd") should return [${arr.join(',')}]: `, () => {
-    expect(arrayLib2.sort([...arr], 'asd')).toStrictEqual(arr)
+  test(`sort([${arr.join(',')}], "asd") should return [${sorted.join(',')}]: `, () => {
+    expect(arrayLib2.sort([...arr], 'asd')).toStrictEqual(sorted)
   })
 
-  test(`sort([${arr.join(',')}]) should return [${arr.join(',')}]: `, () => {
-    expect(arrayLib2.sort([...arr])).toStrictEqual(arr)
+  test(`sort([${arr.join(',')}]) should return [${sorted.join(',')}]: `, () => {
+    expect(arrayLib2.sort([...arr])).toStrictEqual(sorted)
   })
 
   test('sort() should return []: ', () => {
     expect(arrayLib2.sort()).toStrictEqual([])
   })
 
+  test('sort({}) should return []: ', () => {
+    expect(arrayLib2.sort()).toStrictEqual([])
+  })
+
+  test('sort(null, "") should return []: ', () => {
+    expect(arrayLib2.sort()).toStrictEqual([])
+  })
+
+  test('sort(false) should return []: ', () => {
+    expect(arrayLib2.sort()).toStrictEqual([])
+  })
+
   test('sort(undefined, 2) should return []: ', () => {
     expect(arrayLib2.sort(undefined, 2)).toStrictEqual([])
+  })
+
+  test(`sort([${arr.join(',')}] should return [${sorted.join(',')}]:: `, () => {
+    expect(arrayLib2.sort()).toStrictEqual([])
   })
 
   test('sort([], bubble) should return []: ', () => {
@@ -50,12 +66,20 @@ describe('testing minimum function: ', () => {
     expect(arrayLib2.minimum([...oneElemArr])).toBe(2)
   })
 
-  test('minumum([]) should return []: ', () => {
-    expect(arrayLib2.minimum([])).toStrictEqual([])
+  test('minumum([]) should return undefined: ', () => {
+    expect(arrayLib2.minimum([])).toStrictEqual(undefined)
   })
 
-  test('minumum() should return []: ', () => {
-    expect(arrayLib2.minimum()).toStrictEqual([])
+  test('minumum() should return undefined: ', () => {
+    expect(arrayLib2.minimum()).toStrictEqual(undefined)
+  })
+
+  test('minumum(null) should return undefined: ', () => {
+    expect(arrayLib2.minimum()).toStrictEqual(undefined)
+  })
+
+  test('minumum("") should return undefined: ', () => {
+    expect(arrayLib2.minimum()).toStrictEqual(undefined)
   })
 })
 
@@ -76,12 +100,20 @@ describe('testing maximum function: ', () => {
     expect(arrayLib2.maximum([...oneElemArr])).toBe(2)
   })
 
-  test('maximum([]) should return []: ', () => {
-    expect(arrayLib2.maximum([])).toStrictEqual([])
+  test('maximum([]) should return undefined: ', () => {
+    expect(arrayLib2.maximum([])).toStrictEqual(undefined)
   })
 
-  test('maximum() should return []: ', () => {
-    expect(arrayLib2.maximum()).toStrictEqual([])
+  test('maximum() should return undefined: ', () => {
+    expect(arrayLib2.maximum()).toStrictEqual(undefined)
+  })
+
+  test('maximum("") should return undefined: ', () => {
+    expect(arrayLib2.maximum()).toStrictEqual(undefined)
+  })
+
+  test('maximum(null) should return undefined: ', () => {
+    expect(arrayLib2.maximum()).toStrictEqual(undefined)
   })
 })
 
@@ -104,12 +136,16 @@ describe('testing medium function: ', () => {
     expect(arrayLib2.medium([...oneElemArr])).toBe(sum(oneElemArr))
   })
 
-  test('medium([]) should return []: ', () => {
-    expect(arrayLib2.medium([])).toStrictEqual([])
+  test('medium([]) should return undefined: ', () => {
+    expect(arrayLib2.medium([])).toStrictEqual(undefined)
   })
 
-  test('medium() should return []: ', () => {
-    expect(arrayLib2.medium()).toStrictEqual([])
+  test('medium() should return undefined: ', () => {
+    expect(arrayLib2.medium()).toStrictEqual(undefined)
+  })
+
+  test('medium(null) should return undefined: ', () => {
+    expect(arrayLib2.medium()).toStrictEqual(undefined)
   })
 })
 
