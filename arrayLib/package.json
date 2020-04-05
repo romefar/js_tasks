@@ -1,0 +1,20 @@
+{
+  "name": "arraylib",
+  "version": "1.0.0",
+  "description": "A functional library for working with arrays.",
+  "main": "arrayLib.es5.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "arrays",
+    "js",
+    "es5"
+  ],
+  "author": "romefar",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^25.2.4",
+    "standard": "^14.3.3"
+  }
+}
